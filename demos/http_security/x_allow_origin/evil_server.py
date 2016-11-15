@@ -10,16 +10,14 @@ def start():
 
 @app.route("/allowed", methods=['GET'])
 def allowed():
-    content = requests.get('http://127.0.0.1:5000/allowed').content
+    content = requests.get('http://0.0.0.0:5000/allowed').content
     return render_template('index.html', content = content)
-    
+
 @app.route("/protected", methods=['GET'])
 def protected():
-    content = requests.get('http://127.0.0.1:5000/protected').content
+    content = requests.get('http://0.0.0.0:5000/protected').content
     return render_template('index.html', content = content)
 
-    
-if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=1337)
-	
 
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=1337)

@@ -19,7 +19,7 @@ def protected():
     xss = request.form['with_csp']
     r = make_response(render_template('index.html', xss = xss))
     r.headers.set('Content-Security-Policy', "default-src 'self'")
-    r.headers.set('Content-Security-Policy', "script-src 'http://127.0.0.1'")
+    r.headers.set('Content-Security-Policy', "script-src 'http://0.0.0.0'")
     return r
     
 if __name__ == "__main__":
