@@ -1,7 +1,9 @@
 from flask import Flask, request, url_for, render_template, redirect, make_response
 import json
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_url_path='/static', static_folder='../../static')
+
 app.config['DEBUG'] = True
 
 @app.route("/")
@@ -25,6 +27,6 @@ def protected():
     return r
     
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run()
 	
 
