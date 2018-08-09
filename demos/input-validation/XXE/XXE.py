@@ -17,9 +17,9 @@ def start():
 def xxe():
     doc = parseString(request.form['xxe'])
     for event, node in doc:
-		if event == START_ELEMENT and node.localName == "items":
-			doc.expandNode(node)
-			nodes = node.toxml()
+        if event == START_ELEMENT and node.localName == "items":
+            doc.expandNode(node)
+            nodes = node.toxml()
     return render_template("index.html", nodes = nodes)
 
 
