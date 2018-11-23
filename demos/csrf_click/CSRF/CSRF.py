@@ -24,12 +24,12 @@ def login():
     sqli  = Classes()
     values = sqli.getUser(request.form['username'])
     if values:
-		if values[0][2] == request.form['password']:
-			session['userId'] = values[0][0]
-			session['loggedin'] = True
-			pref = sqli.getColor(values[0][0])
-			color = pref[0][0]
-			return render_template("loggedin.html", color = color)       
+        if values[0][2] == request.form['password']:
+            session['userId'] = values[0][0]
+            session['loggedin'] = True
+            pref = sqli.getColor(values[0][0])
+            color = pref[0][0]
+            return render_template("loggedin.html", color = color)       
     return render_template("index.html")
     
     
